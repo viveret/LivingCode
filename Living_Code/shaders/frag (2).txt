@@ -1,0 +1,67 @@
+#version 110
+
+uniform sampler2D tex;
+						
+varying float Light_intensity;	  
+varying vec4 Light_Pos;
+varying vec4 Light_Col;
+varying vec3 Light_Dir;
+
+float rand(vec2 n)
+{
+	return 0.5 + 0.5 *
+    fract(sin(dot(n.xy, vec2(12.9898, 78.233)))* 43758.5453);
+}
+
+void main()
+{	   
+	float ColMax=255.0;
+	vec4 nTex = texture2D(tex,gl_TexCoord[0].st);
+	
+	nTex.r*=gl_Color.r;
+	nTex.g*=gl_Color.g;
+	nTex.b*=gl_Color.b;
+	nTex.a*=gl_Color.a;
+
+	float Average=(nTex.r+nTex.g+nTex.b)/3.0;
+				   
+	//nTex.r=Average;
+	//nTex.g=Average;
+	//nTex.b=Average;
+	
+		   
+	//sepia				  
+	//vec2 sepr*=//vec2(200.0/ColMax,225.0/ColMax);
+	//vec2 sepg*=;//vec2(145.0/ColMax,170.0/ColMax);
+	//vec2 sepb*=;//vec2(35.0/ColMax,60.0/ColMax);
+
+	//nTex.r*=225.0/ColMax;//*Light_intensity;//rand(sepr);
+	//nTex.g*=170.0/ColMax;//*Light_intensity;//rand(sepg); 
+	//nTex.b*=60.0/ColMax;//*Light_intensity;//rand(sepb);
+
+	float AddLight=1.0;
+									
+					
+	vec2 LightPos=vec2(gl_FragCoord.x-Light_Pos.x,gl_FragCoord.y-Light_Pos.y);				
+
+	float LightDist=sqrt(LightPos.x*LightPos.x+LightPos.y*LightPos.y);	
+	
+		
+	AddLight=1./(LightDist*0.01);//(1./LightDist*1.) * 1.5;//Light_intensity;
+									
+	if(AddLight>1.){AddLight=1.;}
+	//if(AddLight<0.){AddLight=0.;}
+
+	//-darkness__________lightcolor-
+
+	//vec4 AddLightCol=vec4(nTex.r*Light_Col.r,nTex.g*Light_Col.g,nTex.b*Light_Col.b,0.);
+
+	vec4 AddLightCol=vec4(Light_Col.r*AddLight,Light_Col.g*AddLight,Light_Col.b*AddLight,abs(Light_Col.a*AddLight));
+							
+	nTex.r*=AddLightCol.r;
+	nTex.g*=AddLightCol.g;
+	nTex.b*=AddLightCol.b;
+
+
+	gl_FragColor = nTex;
+}

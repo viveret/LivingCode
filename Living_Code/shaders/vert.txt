@@ -1,0 +1,32 @@
+#version 110	  
+
+varying float Light_intensity;
+varying vec4 Light_Pos;		
+varying vec3 Light_Dir;
+varying float Light_Dist;
+varying vec3 lightDir,normal;
+varying vec4 Light_Col;
+varying vec3 my_Pos;
+
+uniform bool In_Game;
+uniform bool Light_Enabled,Tex_Enabled;	
+varying vec4 Vert_Pos;
+
+
+void main()
+{
+	vec4 Pos=vec4(gl_Vertex);
+	gl_Position = gl_ModelViewProjectionMatrix * Pos;//ftransform();  	
+
+
+	if( Light_Enabled )
+	{
+		Light_Pos=gl_LightSource[0].position * 32.0;
+
+		Light_intensity = 1.0;
+		Light_Col=gl_LightSource[0].ambient;
+	}
+
+	gl_FrontColor = gl_Color;
+	gl_TexCoord[0] = gl_MultiTexCoord0;
+}

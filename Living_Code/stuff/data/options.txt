@@ -1,0 +1,20 @@
+texture load:fas
+record load history:true
+record bad opengl change:false
+
+log unfound files:false
+
+force old shaders:false
+force old rtt:false
+force old vbo:false
+
+
+world width:512
+
+grass spawn time: 25.0
+grass max amount: 40
+
+max ais:7
+
+
+harshness:50.0

@@ -1,0 +1,23 @@
+#version 110
+
+varying float Light_intensity;
+varying vec4 Light_Pos;
+varying vec3 Light_Dir;
+varying vec4 Light_Col;
+
+void main()
+{
+	vec4 Pos=vec4(gl_Vertex);
+	gl_Position = gl_ModelViewProjectionMatrix * Pos;//ftransform();  	
+
+
+	Light_Pos=gl_LightSource[0].position;
+
+	vec3 lightDir = normalize(vec3(gl_LightSource[0].position));
+	Light_Dir=lightDir;
+	Light_intensity = dot(lightDir,gl_Normal);
+	Light_Col=gl_LightSource[0].ambient;
+
+	gl_FrontColor = gl_Color;
+	gl_TexCoord[0] = gl_MultiTexCoord0;
+}

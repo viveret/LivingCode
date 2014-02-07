@@ -1,0 +1,19 @@
+﻿Build started 5/2/2013 7:05:06 PM.
+     1>Project "C:\Users\Bennettbugs\Game_Development\Living_Code\Living_Code\Living_Code.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\Living_Code.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         Living_Code.vcxproj -> C:\Users\Bennettbugs\Game_Development\Living_Code\Release\Living_Code.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\Living_Code.unsuccessfulbuild".
+         Touching "Release\Living_Code.lastbuildstate".
+     1>Done Building Project "C:\Users\Bennettbugs\Game_Development\Living_Code\Living_Code\Living_Code.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05

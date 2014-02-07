@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Living_Code", "Living_Code\Living_Code.vcxproj", "{BDD39132-20E3-44FD-BF65-055EA80E9E54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDD39132-20E3-44FD-BF65-055EA80E9E54}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BDD39132-20E3-44FD-BF65-055EA80E9E54}.Debug|Win32.Build.0 = Debug|Win32
+		{BDD39132-20E3-44FD-BF65-055EA80E9E54}.Release|Win32.ActiveCfg = Release|Win32
+		{BDD39132-20E3-44FD-BF65-055EA80E9E54}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

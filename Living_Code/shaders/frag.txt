@@ -1,0 +1,75 @@
+#version 110
+
+uniform sampler2D tex;
+						
+varying float Light_intensity;	  
+varying vec4 Light_Pos;	 
+varying float Light_Dist;
+varying vec4 Light_Col;
+varying vec3 lightDir,normal;
+varying vec4 Vert_Pos;	  
+uniform vec4 myAmbient;
+varying vec3 my_Pos;
+
+uniform bool In_Game;
+uniform bool Light_Enabled,Fog,Enabled,Tex_Enabled;
+
+float rand(vec2 n)
+{
+	return 0.5 + 0.5 *
+    fract(sin(dot(n.xy, vec2(12.9898, 78.233)))* 43758.5453);
+}
+
+
+void main()
+{	   
+	vec4 nTex;
+	
+	if(Tex_Enabled)
+	{
+		 nTex= texture2D(tex,gl_TexCoord[0].st);
+	
+		nTex.r*=gl_Color.r;
+		nTex.g*=gl_Color.g;
+		nTex.b*=gl_Color.b;
+		nTex.a*=gl_Color.a;
+	}
+	else
+	{
+		nTex=gl_Color;
+	}
+
+	float Average=(nTex.r+nTex.g+nTex.b)/3.0;
+				   
+	//nTex.r=Average;
+	//nTex.g=Average;
+	//nTex.b=Average;
+
+	float AddLight=1.0;
+						
+
+	if( Light_Enabled )
+	{							
+		vec2 LightPos=vec2(gl_FragCoord.x-Light_Pos.x,gl_FragCoord.y-Light_Pos.y);				
+
+		float LightDist=sqrt(LightPos.x*LightPos.x+LightPos.y*LightPos.y);	
+	
+		
+		AddLight=10.0/(LightDist*0.01 + 0.0001) * 0.05;//(1./LightDist*1.) * 1.5;//Light_intensity;
+									
+		//if(AddLight>1.5){AddLight=1.5;}
+		//if(AddLight>1.){AddLight=1.;}
+		//if(AddLight<0.){AddLight=0.;}
+		if(AddLight<0.7){AddLight=0.7;}
+
+
+		vec4 AddLightCol = vec4(Light_Col.r*AddLight,Light_Col.g*AddLight,Light_Col.b*AddLight,abs(Light_Col.a*AddLight));
+							
+		nTex.r*=AddLightCol.r;
+		nTex.g*=AddLightCol.g;
+		nTex.b*=AddLightCol.b;
+	}
+
+
+	gl_FragColor = nTex;
+}

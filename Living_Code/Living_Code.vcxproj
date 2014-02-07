@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BDD39132-20E3-44FD-BF65-055EA80E9E54}</ProjectGuid>
+    <RootNamespace>Living_Code</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfAtl>Static</UseOfAtl>
+    <WholeProgramOptimization>PGInstrument</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;lib\;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ReferencePath>$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib;lib\;</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;lib\;</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <SourcePath>$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;lib\;</SourcePath>
+    <ExcludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(MSBuildToolsPath32);$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib;lib\;</ExcludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;lib\;</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ReferencePath>$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib;lib\;</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;lib\;</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <SourcePath>$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;lib\;</SourcePath>
+    <ExcludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(MSBuildToolsPath32);$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib;lib\;</ExcludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalOptions>/D_ITERATOR_DEBUG_LEVEL=0 %(AdditionalOptions)</AdditionalOptions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;winmm.lib;comctl32.lib;glew32.lib;opengl32.lib;glu32.lib;SOIL.lib;bass.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:LIBCMT /LTCG %(AdditionalOptions)</AdditionalOptions>
+      <GenerateMapFile>false</GenerateMapFile>
+      <AssemblyDebug>true</AssemblyDebug>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalOptions>/D_ITERATOR_DEBUG_LEVEL=0 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;winmm.lib;comctl32.lib;glew32.lib;opengl32.lib;glu32.lib;SOIL.lib;bass.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:LIBCMT /LTCG %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Win_Stuff.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\ai.cpp" />
+    <ClCompile Include="source\App.cpp" />
+    <ClCompile Include="source\Debug.cpp" />
+    <ClCompile Include="source\Draw_Utility.cpp" />
+    <ClCompile Include="source\Engine.cpp" />
+    <ClCompile Include="source\Engine_Draw.cpp" />
+    <ClCompile Include="source\Engine_Events.cpp" />
+    <ClCompile Include="source\Functions.cpp" />
+    <ClCompile Include="source\Game.cpp" />
+    <ClCompile Include="source\Game_Draw.cpp" />
+    <ClCompile Include="source\Game_Update.cpp" />
+    <ClCompile Include="source\MainWinProc.cpp" />
+    <ClCompile Include="source\myMath.cpp" />
+    <ClCompile Include="source\Object.cpp" />
+    <ClCompile Include="source\OpenGL.cpp" />
+    <ClCompile Include="source\OpenGL_Default.cpp" />
+    <ClCompile Include="source\OpenGL_New.cpp" />
+    <ClCompile Include="source\Particle_System.cpp" />
+    <ClCompile Include="source\Resources.cpp" />
+    <ClCompile Include="source\Screen.cpp" />
+    <ClCompile Include="source\Screen_Draw.cpp" />
+    <ClCompile Include="source\Screen_Menus.cpp" />
+    <ClCompile Include="source\Threader.cpp" />
+    <ClCompile Include="source\Timer.cpp" />
+    <ClCompile Include="source\Utility.cpp" />
+    <ClCompile Include="source\Win32_GUI.cpp" />
+    <ClCompile Include="source\XBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\ai.h" />
+    <ClInclude Include="source\App.h" />
+    <ClInclude Include="source\Colors.h" />
+    <ClInclude Include="source\Core.h" />
+    <ClInclude Include="source\Debug.h" />
+    <ClInclude Include="source\Draw_Utility.h" />
+    <ClInclude Include="source\Engine.h" />
+    <ClInclude Include="source\Engine_Events.h" />
+    <ClInclude Include="source\Functions.h" />
+    <ClInclude Include="source\Game.h" />
+    <ClInclude Include="source\Game_Draw.h" />
+    <ClInclude Include="source\Game_Phys_Manager.h" />
+    <ClInclude Include="source\myMath.h" />
+    <ClInclude Include="source\Object.h" />
+    <ClInclude Include="source\OpenGL.h" />
+    <ClInclude Include="source\Particle_System.h" />
+    <ClInclude Include="source\Resources.h" />
+    <ClInclude Include="source\Screen.h" />
+    <ClInclude Include="source\Threader.h" />
+    <ClInclude Include="source\Timer.h" />
+    <ClInclude Include="source\Utility.h" />
+    <ClInclude Include="source\Win32_GUI.h" />
+    <ClInclude Include="source\Win_Stuff.h" />
+    <ClInclude Include="source\XBox.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
